@@ -81,6 +81,27 @@
     <Compile Include="Interfaces\Dialog\Directives\DialogDirective.cs" />
     <Compile Include="Interfaces\Dialog\Directives\DialogConfirmSlotDirective.cs" />
     <Compile Include="Interfaces\Dialog\Directives\DialogElicitSlotDirective.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Directives\BuyDirective.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Directives\CancelDirective.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Directives\PaymentDirective.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Directives\PaymentPayload.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Directives\PaymentPayloadProduct.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Directives\UpsellDirective.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Entitlement.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\IInSkillPurchaseSpeechlet.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\IInSkillPurchaseSpeechletAsync.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\InSkillProduct.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\InSkillProductsClient.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\InSkillProductsResponse.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\PaymentType.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\ProductFilters.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\ProductType.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\PurchaseState.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Responses\ConnectionResponseHandler.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Responses\ConnectionResponsePayload.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Responses\ConnectionResponse.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Responses\ConnectionResponseStatus.cs" />
+    <Compile Include="Interfaces\InSkillPurchase\Responses\PurchaseResult.cs" />
     <Compile Include="Interfaces\VideoApp\Directives\VideoAppLaunchDirective.cs" />
     <Compile Include="Interfaces\VideoApp\VideoItem.cs" />
     <Compile Include="Interfaces\VideoApp\VideoItemMetadata.cs" />
@@ -156,6 +177,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

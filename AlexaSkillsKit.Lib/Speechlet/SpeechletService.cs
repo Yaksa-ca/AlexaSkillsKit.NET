@@ -3,6 +3,8 @@
 using AlexaSkillsKit.Authentication;
 using AlexaSkillsKit.Interfaces.AudioPlayer;
 using AlexaSkillsKit.Interfaces.Display;
+using AlexaSkillsKit.Interfaces.InSkillPurchase;
+using AlexaSkillsKit.Interfaces.InSkillPurchase.Responses;
 using AlexaSkillsKit.Json;
 using Newtonsoft.Json;
 using System;
@@ -55,6 +57,14 @@ namespace AlexaSkillsKit.Speechlet
                 AddHandler<DisplayRequest>(DisplayRequest.TypeName, async (request, context) => {
                     return (speechlet as IDisplaySpeechlet)?.OnDisplay(request, context) ??
                         await (speechlet as IDisplaySpeechletAsync).OnDisplayAsync(request, context);
+                });
+            }
+
+            if (speechlet is IInSkillPurchaseSpeechletAsync)
+            {
+                AddHandler<ConnectionResponseHandler>(ConnectionResponseHandler.TypeName, async (request, context) => {
+                    return (speechlet as IInSkillPurchaseSpeechlet)?.OnInPurchaseIntent(request, context) ??
+                        await (speechlet as IInSkillPurchaseSpeechletAsync).OnInPurchaseIntentAsync(request, context);
                 });
             }
         }

@@ -50,5 +50,10 @@ namespace AlexaSkillsKit.Json
         public static void AddDisplay(this SpeechletRequestParser parser) {
             parser.AddInterface(DisplayRequest.TypeName, (subtype, json) => new DisplayRequest(subtype, json));
         }
+
+        public static void AddInSkillPurchase(this SpeechletRequestParser parser)
+        {
+            parser.AddInterface(DisplayRequest.TypeName, (subtype, json) => new DisplayRequest(subtype, json));
+        }
     }
 }

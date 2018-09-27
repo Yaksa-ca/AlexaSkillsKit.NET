@@ -6,6 +6,7 @@ using System.Linq;
 using AlexaSkillsKit.Interfaces.Display;
 using AlexaSkillsKit.Interfaces.AudioPlayer;
 using AlexaSkillsKit.Json;
+using AlexaSkillsKit.Interfaces.InSkillPurchase.Responses;
 
 namespace AlexaSkillsKit.Speechlet
 {
@@ -20,6 +21,7 @@ namespace AlexaSkillsKit.Speechlet
         static SupportedInterfaces() {
             Deserializer<ISpeechletInterface>.RegisterDeserializer("Display", DisplayInterface.FromJson);
             Deserializer<ISpeechletInterface>.RegisterDeserializer("AudioPlayer", AudioPlayerInterface.FromJson);
+            //Deserializer<ISpeechletInterface>.RegisterDeserializer("Connections.Response", ConnectionResponseInterface.FromJson);
         }
 
         public static SupportedInterfaces FromJson(JObject json) {
