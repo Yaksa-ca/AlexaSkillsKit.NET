@@ -244,9 +244,9 @@ namespace AlexaSkillsKit.Speechlet
             else if (request is SessionEndedRequest) {
                 // process session ended request
                 if (speechlet is ISpeechletWithContext)
-                    (speechlet as ISpeechletWithContext).OnSessionEnded(request as SessionEndedRequest, session, context);
+                    return (speechlet as ISpeechletWithContext).OnSessionEnded(request as SessionEndedRequest, session, context);
                 else if (speechlet is ISpeechletWithContextAsync)
-                    await (speechlet as ISpeechletWithContextAsync).OnSessionEndedAsync(request as SessionEndedRequest, session, context);
+                    return await (speechlet as ISpeechletWithContextAsync).OnSessionEndedAsync(request as SessionEndedRequest, session, context);
                 else if (speechlet is ISpeechlet)
                     (speechlet as ISpeechlet).OnSessionEnded(request as SessionEndedRequest, session);
                 else if (speechlet is ISpeechletAsync)

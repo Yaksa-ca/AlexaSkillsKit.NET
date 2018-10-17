@@ -18,6 +18,7 @@ namespace AlexaSkillsKit.Json
             RequestParser.AddAudioPlayer();
             RequestParser.AddPlaybackController();
             RequestParser.AddDisplay();
+            RequestParser.AddInSkillPurchase();
         }
 
         /// <summary>

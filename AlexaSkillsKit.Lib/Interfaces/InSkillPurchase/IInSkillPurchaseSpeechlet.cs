@@ -10,6 +10,6 @@ namespace AlexaSkillsKit.Interfaces.InSkillPurchase
 {
     public interface IInSkillPurchaseSpeechlet
     {
-        ConnectionResponse OnInPurchaseIntent(ExtendedSpeechletRequest InPurchaseRequest, Context context);
+        ConnectionResponse OnInPurchaseIntent(ConnectionResponseHandler InPurchaseRequest, Context context);
     }
 }

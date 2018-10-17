@@ -2,6 +2,7 @@
 
 using AlexaSkillsKit.Interfaces.AudioPlayer;
 using AlexaSkillsKit.Interfaces.Display;
+using AlexaSkillsKit.Interfaces.InSkillPurchase.Responses;
 using AlexaSkillsKit.Speechlet;
 
 namespace AlexaSkillsKit.Json
@@ -53,7 +54,7 @@ namespace AlexaSkillsKit.Json
 
         public static void AddInSkillPurchase(this SpeechletRequestParser parser)
         {
-            parser.AddInterface(DisplayRequest.TypeName, (subtype, json) => new DisplayRequest(subtype, json));
+            parser.AddInterface(ConnectionResponseHandler.TypeName, (subtype, json) => new ConnectionResponseHandler(subtype, json));
         }
     }
 }

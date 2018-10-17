@@ -7,6 +7,6 @@ namespace AlexaSkillsKit.Speechlet
         SpeechletResponse OnIntent(IntentRequest intentRequest, Session session, Context context);
         SpeechletResponse OnLaunch(LaunchRequest launchRequest, Session session, Context context);
         void OnSessionStarted(SessionStartedRequest sessionStartedRequest, Session session, Context context);
-        void OnSessionEnded(SessionEndedRequest sessionEndedRequest, Session session, Context context);
+        SpeechletResponse OnSessionEnded(SessionEndedRequest sessionEndedRequest, Session session, Context context);
     }
 }
