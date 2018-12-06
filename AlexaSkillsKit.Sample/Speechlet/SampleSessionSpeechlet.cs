@@ -15,7 +15,7 @@ namespace Sample.Controllers
 {
     public class SampleSessionSpeechlet : SpeechletBase, ISpeechletWithContext
     {
-        private static Logger Log = LogManager.GetCurrentClassLogger();
+        //private static Logger Log = LogManager.GetCurrentClassLogger();
 
         // Note: NAME_KEY being a JSON property key gets camelCased during serialization
         private const string NAME_KEY = "name";

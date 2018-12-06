@@ -14,6 +14,12 @@ namespace AlexaSkillsKit.Json
             = new Dictionary<string, Func<string, JObject, SpeechletRequest>>();
 
         private SpeechletRequest Parse(string type, string subtype, JObject json) {
+
+            if (type == "Connections")
+            {
+                return resolvers[$"{type}.{subtype}"](string.Empty, json);
+            }
+
             if (json == null || !resolvers.ContainsKey(type)) return null;
 
             return resolvers[type](subtype, json);

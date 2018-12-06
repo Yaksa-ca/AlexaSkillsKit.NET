@@ -21,8 +21,8 @@ namespace AlexaSkillsKit.Interfaces.InSkillPurchase.Directives
         }
 
 
-        [JsonProperty("InSkillProduct")] public PaymentPayloadProduct InSkillProduct { get; set; }
+        [JsonProperty(PropertyName = "InSkillProduct")] public PaymentPayloadProduct InSkillProduct { get; set; }
 
-        [JsonProperty("upsellMessage",NullValueHandling = NullValueHandling.Ignore)] public string UpsellMessage { get; set; }
+        [JsonProperty(PropertyName ="upsellMessage",NullValueHandling = NullValueHandling.Ignore)] public string UpsellMessage { get; set; }
     }
 }

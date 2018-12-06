@@ -62,9 +62,9 @@ namespace AlexaSkillsKit.Speechlet
 
             if (speechlet is IInSkillPurchaseSpeechletAsync)
             {
-                AddHandler<ConnectionResponseHandler>(ConnectionResponseHandler.TypeName, async (request, context) => {
-                    return (speechlet as IInSkillPurchaseSpeechlet)?.OnInPurchaseIntent(request, context) ??
-                        await (speechlet as IInSkillPurchaseSpeechletAsync).OnInPurchaseIntentAsync(request, context);
+                AddHandler<ConnectionResponse>(ConnectionResponse.TypeName, async (request, context) => {
+                    return (speechlet as IInSkillPurchaseSpeechlet)?.OnInPurchaseIntent(request, null, context) ??
+                        await (speechlet as IInSkillPurchaseSpeechletAsync).OnInPurchaseIntentAsync(request,null, context);
                 });
             }
         }
@@ -92,6 +92,7 @@ namespace AlexaSkillsKit.Speechlet
                 var alexaRequest = await GetRequestAsync(content, chainUrl, signature);
                 var alexaResponse = await ProcessRequestAsync(alexaRequest);
                 var json = alexaResponse?.ToJson();
+                json = json.Replace("\"inSkillProduct\":", "\"InSkillProduct\":");
 
                 return (json == null) ?
                     new HttpResponseMessage(HttpStatusCode.InternalServerError) :

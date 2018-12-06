@@ -54,7 +54,7 @@ namespace AlexaSkillsKit.Json
 
         public static void AddInSkillPurchase(this SpeechletRequestParser parser)
         {
-            parser.AddInterface(ConnectionResponseHandler.TypeName, (subtype, json) => new ConnectionResponseHandler(subtype, json));
+            parser.AddInterface(ConnectionResponse.TypeName, (subtype, json) => new ConnectionResponse(subtype, json));
         }
     }
 }

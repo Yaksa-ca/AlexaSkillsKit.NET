@@ -10,6 +10,6 @@ namespace AlexaSkillsKit.Interfaces.InSkillPurchase
 {
     public interface IInSkillPurchaseSpeechletAsync
     {
-        Task<ConnectionResponse> OnInPurchaseIntentAsync(ConnectionResponseHandler InPurchaseRequest, Context context);
+        Task<SpeechletResponse> OnInPurchaseIntentAsync(ConnectionResponse InPurchaseRequest, Session session, Context context);
     }
 }
